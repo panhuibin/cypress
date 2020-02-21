@@ -77,15 +77,17 @@ export default class Iframes extends Component {
       restoreDom: this.autIframe.restoreDom,
       highlightEl: this.autIframe.highlightEl,
       detachDom: this.autIframe.detachDom,
-      snapshotControls: (snapshotProps) => (
-        <SnapshotControls
-          eventManager={this.props.eventManager}
-          snapshotProps={snapshotProps}
-          state={this.props.state}
-          onToggleHighlights={this._toggleSnapshotHighlights}
-          onStateChange={this._changeSnapshotState}
-        />
-      ),
+      snapshotControls: (snapshotProps) => {
+        return (
+          <SnapshotControls
+            eventManager={this.props.eventManager}
+            snapshotProps={snapshotProps}
+            state={this.props.state}
+            onToggleHighlights={this._toggleSnapshotHighlights}
+            onStateChange={this._changeSnapshotState}
+          />
+        )
+      },
     })
 
     this.iframeModel.listen()
@@ -115,6 +117,7 @@ export default class Iframes extends Component {
   // wiped out and reset on re-runs and the snapshots are from dom we don't control
   _loadIframes (specPath) {
     return new Promise((resolve) => {
+      debugger
       // TODO: config should have "iframeUrl": "/__cypress/iframes"
       const specSrc = `/${this.props.config.namespace}/iframes/${specPath}`
 

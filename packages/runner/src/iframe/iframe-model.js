@@ -69,6 +69,7 @@ export default class IframeModel {
   }
 
   _setSnapshots = (snapshotProps) => {
+    debugger
     if (this.isSnapshotPinned) return
 
     if (this.state.isRunning) {
@@ -118,6 +119,7 @@ export default class IframeModel {
   }
 
   _showSnapshot = (snapshot, snapshotProps) => {
+    debugger
     this.state.messageTitle = 'DOM Snapshot'
     this.state.messageDescription = snapshot.name
     this.state.messageType = ''

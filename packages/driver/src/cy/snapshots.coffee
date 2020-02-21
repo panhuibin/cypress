@@ -130,7 +130,8 @@ create = ($$, state) ->
 
       ## TODO: throw error here if cy is undefined!
     
-      $body = $$("body").clone()
+      debugger
+      $body = $$("body")
 
       ## for the head and body, get an array of all CSS,
       ## whether it's links or style tags
@@ -138,8 +139,8 @@ create = ($$, state) ->
       ## it it's cross-domain, it will get a reference to the link's href
       { headStyleIds, bodyStyleIds } = snapshotsCss.getStyleIds()
 
-      ## replaces iframes with placeholders
-      replaceIframes($body)
+      ## replaces iframes with placeholders 
+      ##replaceIframes($body)
 
       ## remove tags we don't want in body
       $body.find("script,link[rel='stylesheet'],style").remove()
@@ -163,7 +164,8 @@ create = ($$, state) ->
 
       ## preserve attributes on the <html> tag
       htmlAttrs = getHtmlAttrs($$("html")[0])
-
+      
+      debugger
       snapshot = {
         name
         htmlAttrs

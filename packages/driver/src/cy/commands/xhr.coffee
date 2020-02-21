@@ -60,6 +60,7 @@ setRequest = (state, xhr, alias) ->
   state("requests", requests)
 
 setResponse = (state, xhr) ->
+  debugger
   obj = _.find(state("requests"), { xhr })
 
   ## if we've been reset between tests and an xhr
@@ -94,6 +95,7 @@ startXhrServer = (cy, state, config) ->
     ## shouldnt these stubs be called routes?
     ## rename everything related to stubs => routes
     onSend: (xhr, stack, route) =>
+      debugger
       alias = route?.alias
 
       setRequest(state, xhr, alias)

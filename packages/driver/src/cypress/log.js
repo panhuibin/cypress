@@ -316,6 +316,8 @@ const Log = function (cy, state, config, obj) {
       // insert at index 'at' or whatever is the next position
       snapshots[options.at || snapshots.length] = snapshot
 
+      debugger
+
       this.set('snapshots', snapshots)
 
       if (options.next) {

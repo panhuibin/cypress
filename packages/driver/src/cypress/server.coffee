@@ -430,9 +430,11 @@ create = (options = {}) ->
               isCalled = false
 
         onLoadFn = ->
+          debugger
           proxy._setDuration(timeStart)
           proxy._setStatus()
           proxy._setResponseHeaders()
+          debugger
           proxy._setResponseBody()
 
           if err = proxy._getFixtureError()
